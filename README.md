@@ -102,7 +102,7 @@ graph LR
     F --> G[Codecov Upload]
     G --> H[Build Job]
     H --> I[Package JAR]
-    I --> J[Deploy to Railway<br/>(main branch only)]
+    I --> J[Deploy to Railway<br/>(DEPLOY_ENABLED=true)]
 ```
 
 **Quality Gates:**
@@ -143,7 +143,8 @@ src/
 4. Set environment variables:
    - `DATABASE_URL` (from Railway PostgreSQL)
    - `RAILWAY_TOKEN` (in GitHub repo secrets)
-5. Push to `main` → auto-deploys
+   - `DEPLOY_ENABLED=true` (in GitHub repo variables)
+5. Push to `main` → runs tests and deploys when `DEPLOY_ENABLED=true`
 
 ## Why This Showcases QA Skills
 
