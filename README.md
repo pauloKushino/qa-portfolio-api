@@ -1,17 +1,13 @@
 # QA Portfolio API
 
 ![CI/CD](https://github.com/pauloKushino/qa-portfolio-api/actions/workflows/ci-cd.yml/badge.svg)
-![Railway](https://img.shields.io/badge/Railway-Live-brightgreen?logo=railway)
-![Coverage](https://img.shields.io/badge/Coverage-80%25+-brightgreen)
+![Coverage](https://img.shields.io/badge/Coverage_gate-80%25-brightgreen)
 ![Java](https://img.shields.io/badge/Java-21-blue?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.1-brightgreen?logo=spring)
 
 Backend showcase demonstrating **QA automation skills** with Spring Boot 4: comprehensive test strategy, contract testing, Testcontainers, REST Assured, CI/CD with coverage gates.
 
-## Live Demo
-
-**API Base:** https://qa-portfolio-api.railway.app
-**Swagger UI:** https://qa-portfolio-api.railway.app/swagger-ui.html
+> **Demo pública:** ainda não publicada. O deploy está configurado no workflow e no `railway.toml`; enquanto isso, siga as instruções de execução local abaixo.
 
 ## Tech Stack
 

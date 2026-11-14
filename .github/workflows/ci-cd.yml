@@ -23,12 +23,13 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
-      - run: ./mvnw verify -Dspring.profiles.active=test
+      - run: ./mvnw verify
       - uses: codecov/codecov-action@v4
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: ./target/site/jacoco/jacoco.xml
           flags: unittests
-          fail_ci_if_error: true
+          fail_ci_if_error: false
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -55,7 +56,11 @@ jobs:
           name: jar
           path: target
       - name: Deploy to Railway
+        if: ${{ secrets.RAILWAY_TOKEN != '' }}
         uses: railwayapp/railway-deploy@v1
         with:
           token: ${{ secrets.RAILWAY_TOKEN }}
           service: qa-portfolio-api
+      - name: Deploy skipped (secret not configured)
+        if: ${{ secrets.RAILWAY_TOKEN == '' }}
+        run: echo "Deploy ignorado: configure RAILWAY_TOKEN nos secrets do repositorio."
