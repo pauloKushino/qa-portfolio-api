@@ -95,7 +95,8 @@ class ProjectContractTest {
                 .then()
                 .statusCode(201)
                 .extract()
-                .path("id");
+                .jsonPath()
+                .getLong("id");
 
         // Then get it by ID
         given()
@@ -124,7 +125,8 @@ class ProjectContractTest {
                 .then()
                 .statusCode(201)
                 .extract()
-                .path("id");
+                .jsonPath()
+                .getLong("id");
 
         String updateBody = """
             {
@@ -161,7 +163,8 @@ class ProjectContractTest {
                 .then()
                 .statusCode(201)
                 .extract()
-                .path("id");
+                .jsonPath()
+                .getLong("id");
 
         given()
                 .when()
